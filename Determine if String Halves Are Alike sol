@@ -1,0 +1,14 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        def vowels_count(string):
+            vowels = set('aeiouAEIOU')
+            return sum(1 for char in string if char in vowels)
+
+        leng = len(s)
+        mid_point = leng // 2
+
+        half_one = s[:mid_point]
+        half_two = s[mid_point:]
+
+        return vowels_count(half_one) == vowels_count(half_two) 
+        
